@@ -1,4 +1,3 @@
-
 /*
 This demo is best viewed using the FastLED compiler.
 
@@ -15,7 +14,7 @@ OVERVIEW:
 This sketch creates a fire effect on a cylindrical LED display using Perlin noise.
 Unlike a flat matrix, this cylinder connects the left and right edges (x=0 and x=width-1),
 creating a seamless wrap-around effect. The fire appears to rise from the bottom,
-with colors transitioning from black to red/yellow/white (or other palettes).
+with colors transitioning from white/yellow to red (or other palettes).
 */
 
 // Perlin noise fire procedure
@@ -69,26 +68,26 @@ CRGB leds[HEIGHT * WIDTH];
 
 DEFINE_GRADIENT_PALETTE(firepal){
     // Traditional fire palette - transitions from black to red to yellow to white
-    0,   0,   0,   0,  // black (bottom of fire)
-    32,  255, 0,   0,  // red (base of flames)
+    0,   0,   0,   0,  // black (space above fire)
+    32,  255, 0,   0,  // red (tips of flames)
     190, 255, 255, 0,  // yellow (middle of flames)
-    255, 255, 255, 255 // white (hottest part/tips of flames)
+    255, 255, 255, 255 // white (hottest part/base of flames)
 };
 
 DEFINE_GRADIENT_PALETTE(electricGreenFirePal){
     // Green fire palette - for a toxic/alien look
-    0,   0,   0,   0,  // black (bottom)
-    32,  0,   70,  0,  // dark green (base)
-    190, 57,  255, 20, // electric neon green (middle)
-    255, 255, 255, 255 // white (hottest part)
+    0,   0,   0,   0,  // black (space above fire)
+    32,  0,   70,  0,  // dark green (tips of flames)
+    190, 57,  255, 20, // electric neon green (middle of flames)
+    255, 255, 255, 255 // white (hottest part/base of flames)
 };
 
 DEFINE_GRADIENT_PALETTE(electricBlueFirePal){
     // Blue fire palette - for a cold/ice fire look
-    0,   0,   0,   0,   // Black (bottom)
-    32,  0,   0,   70,  // Dark blue (base)
-    128, 20,  57,  255, // Electric blue (middle)
-    255, 255, 255, 255  // White (hottest part)
+    0,   0,   0,   0,   // Black (space above fire)
+    32,  0,   0,   70,  // Dark blue (tips of flames)
+    128, 20,  57,  255, // Electric blue (middle of flames)
+    255, 255, 255, 255  // White (hottest part/base of flames)
 };
 
 // Create a mapping between 1D array positions and 2D x,y coordinates
